@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Admin's Sign Up</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -webkit-font-smoothing: antialiased;
+          -moz-font-smoothing: antialiased;
+          -o-font-smoothing: antialiased;
+          font-synthesis: antialiased;
+          text-rendering: optimizeLegibility;
+        }
+
+        body  {
+
+            background-image: url("https://i.insider.com/5bb65d6f0114550c0c471d96?width=1100&format=jpeg&auto=webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #011627;
+        }
+        .transbox {
+            margin-left: 35%;
+            background-color: #F0EAD6;
+            /*border: 1px solid black;*/
+            max-width: 500px;
+
+            width: 100%;
+            opacity: 0.8;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #F0EAD6;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 5px;
+            width: 10px;
+        }
+        .navbar{
+         background-color: #2B669A;
+         opacity: 0.8;
+         text-color: black;
+      }
+      .navbar li a, .navbar .navbar-brand {
+         color: #d5d5d5 !important;
+      }
+      .navbar-nav li a:hover {
+         color: #fff !important;
+      }
+      .navbar-nav li.active a {
+         color: #fff !important;
+         background-color: #29292c !important;
+      }
+      .navbar-default .navbar-toggle {
+         border-color: transparent;
+      }
+      .open .dropdown-toggle {
+         color: #fff;
+         background-color: #555 !important;
+      }
+      .dropdown-menu li a {
+         color: #000 !important;
+      }
+      .dropdown-menu li a:hover {
+         background-color: blue !important;
+      }
+h1 {
+    color: #011627;
+  font-size: 50px;
+  font-weight: 300;
+  margin-bottom: 10px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+        .already{
+            padding-left: 15%;
+            padding-bottom: 5px;
+            font-size: 20px;
+        }
+        button {
+  cursor: pointer;
+  width: 50%;
+  border: none;
+  background: #F694C1;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+
+}
+
+    </style>
+</head>
+<body>
+
+<br>
+    <center>
+        <div>
+
+            <h1 class="well-lg">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Admin Register
+            </h1>
+        </div>
+    </center>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="transbox">
+
+        <table class="table table-hover table-responsive" style="background-color: #F0EAD6">
+            {% for field in user_form %}
+            <tr>
+                <td>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ field.label_tag }}
+                </td>
+                <td>
+                    <center>{{ field }}</center>
+                </td>
+            </tr>
+            {% endfor %}
+
+            {% for field in profile_form %}
+            <tr>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ field.label_tag }}
+                </td>
+                <td>
+                    <center>{{ field }}</center>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    <div style="background-color: #F0EAD6;" >
+        <center><button style="background-color: #011627; opacity:1.0" type="submit">SignUp</button></center><br>
+    </div>
+        <div class="already"> Aready have an account?<a href="/l2">  &nbspLogin</a> &nbsp;&nbsp;here
+            </div>
+    </div>
+</form>
+</body>
+</html>
